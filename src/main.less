@@ -1,0 +1,163 @@
+@accent: #cc7f29;
+@background: #171717;
+@foreground: #dedede;
+
+@darkerAccent: @accent * 0.8;
+@darkerBackground: @background * 0.8;
+@darkestBackground: @background * 0.6;
+@bolderFont: 600;
+@controlHeight: 30px;
+
+.unselectable {
+    cursor: default;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+body {
+    color: @foreground;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+a.btn {
+    @topPadding: 6px;
+
+    .unselectable;
+
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 100px;
+    height: @controlHeight;
+    margin: 3px;
+    padding: @topPadding 10px;
+    background: @accent;
+    color: @foreground;
+    border: 2px solid @foreground;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.8em;
+    font-weight: @bolderFont;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        background: @darkerAccent;
+        padding-top: @topPadding + 1;
+    }
+}
+
+ul {
+    width: 100%;
+    -webkit-padding-start: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+
+    li {
+        @topPadding: 3px;
+
+        .unselectable;
+
+        display: block;
+        width: 100%;
+        height: 25px;
+        padding: @topPadding 10px;
+
+        &:hover {
+            background: @darkerBackground;
+        }
+
+        &:active {
+            background: @darkestBackground;
+        }
+    }
+}
+
+h1 {
+    .unselectable;
+
+    margin: 8px 20px;
+}
+
+header {
+    .unselectable;
+
+    display: block;
+    width: 100%;
+    background: @accent;
+    padding: 8px 20px;
+    margin: 0 0 5px 0;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+label {
+    .unselectable;
+
+    display: block;
+    font-weight: @bolderFont;
+    margin: 6px 3px 3px 3px;
+}
+
+hr {
+    border: 1px solid @foreground;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+}
+
+div.accentPage {
+    .page;
+
+    background: @accent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    background: white;
+    color: @background;
+    height: @controlHeight;
+    border: 2px solid @foreground;
+    padding: 3px 5px;
+    font-size: 1em;
+    text-align: center;
+}
+
+div.status {
+    .unselectable;
+
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: @background;
+
+    a {
+        display: inline-block;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background: lighten(@background, 20%);
+        }
+
+        &:active {
+            background: lighten(@background, 10%);
+        }
+    }
+
+    .connectionState {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        margin: 5px;
+    }
+}

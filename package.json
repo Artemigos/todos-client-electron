@@ -1,0 +1,67 @@
+{
+    "name": "todos-client-electron",
+    "productName": "todos-client-electron",
+    "version": "0.1.0",
+    "description": "Electron based client for a TODO management service.",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "eslint src"
+    },
+    "author": "artemigos",
+    "license": "MIT",
+    "config": {
+        "forge": {
+            "make_targets": {
+                "win32": [
+                    "squirrel"
+                ],
+                "darwin": [
+                    "zip"
+                ],
+                "linux": [
+                    "deb",
+                    "rpm"
+                ]
+            },
+            "electronPackagerConfig": {
+                "packageManager": "yarn"
+            },
+            "electronWinstallerConfig": {
+                "name": "todos_client_electron"
+            },
+            "electronInstallerDebian": {},
+            "electronInstallerRedhat": {},
+            "github_repository": {
+                "owner": "",
+                "name": ""
+            },
+            "windowsStoreConfig": {
+                "packageName": "",
+                "name": "todosclientelectron"
+            }
+        }
+    },
+    "dependencies": {
+        "electron-compile": "^6.4.1",
+        "electron-store": "^1.2.0",
+        "react": "^15.6.1",
+        "react-dom": "^15.6.1"
+    },
+    "devDependencies": {
+        "babel-plugin-transform-async-to-generator": "^6.24.1",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-react": "^6.24.1",
+        "electron-forge": "^4.0.1",
+        "electron-prebuilt-compile": "1.7.5",
+        "eslint": "3",
+        "eslint-config-airbnb": "15",
+        "eslint-plugin-import": "2",
+        "eslint-plugin-jsx-a11y": "5",
+        "eslint-plugin-react": "7"
+    }
+}
